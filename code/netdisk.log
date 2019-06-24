@@ -1,0 +1,53 @@
+connection with client set up at time :Wed Jun  5 07:50:49 2019
+
+at time Wed Jun  5 07:50:52 2019
+: cmd received = pwd
+at time Wed Jun  5 07:50:52 2019
+:cmd received finished successfully
+at time Wed Jun  5 07:50:54 2019
+: cmd received = ls
+at time Wed Jun  5 07:50:54 2019
+:cmd received finished successfully
+at time Wed Jun  5 07:50:59 2019
+: cmd received = exit
+at time Wed Jun  5 07:50:59 2019
+:client exit.
+connection with client set up at time :Wed Jun  5 07:51:25 2019
+
+at time Wed Jun  5 07:51:27 2019
+: cmd received = ls
+at time Wed Jun  5 07:51:27 2019
+:cmd received finished successfully
+at time Wed Jun  5 07:51:37 2019
+: cmd received = exit
+at time Wed Jun  5 07:51:37 2019
+:client exit.
+connection with client set up at time :Wed Jun  5 07:54:07 2019
+
+at time Wed Jun  5 07:54:09 2019
+: cmd received = ls
+
+at time Wed Jun  5 07:54:09 2019
+:cmd received finished successfully
+
+at time Wed Jun  5 07:54:24 2019
+: cmd received = gets netdisk.log
+
+at time Wed Jun  5 07:54:24 2019
+:cmd received finished successfully
+
+at time Wed Jun  5 07:54:28 2019
+: cmd received = exit
+
+at time Wed Jun  5 07:54:28 2019
+:client exit.
+connection with client set up at time :Wed Jun  5 09:40:48 2019
+
+at time Wed Jun  5 09:40:52 2019
+:login from user jzk.
+
+at time Wed Jun  5 09:40:58 2019
+: cmd received = exit
+
+at time Wed Jun  5 09:40:58 2019
+:client exit.

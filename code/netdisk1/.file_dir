@@ -1,0 +1,13 @@
+total 583916
+-rw-rw-r-- 1 jzk  jzk  104857600 Jun 12 20:59 2f282b84e7e608d5852449ed940bfc51
+-rw-rw-r-- 1 jzk  jzk       2733 Jun 14 05:52 850468131dbb1a1fce1b9789595ed88e
+-rwxrwxr-x 1 jzk  jzk      54736 Jun 14 05:40 fileServer1.exe
+-rwxrwxr-x 1 jzk  jzk      54720 Jun 14 05:42 fileServer2.exe
+-rwxrwxr-x 1 jzk  jzk      54720 Jun 14 05:43 fileServer3.exe
+-rw-rw-r-- 1 jzk  jzk       2154 Jun 14 19:00 netdisk.log
+-rw-r--r-- 1 root root      1452 Jun 14 18:58 net.h
+-rwxrwxr-x 1 jzk  jzk      45560 Jun 14 18:52 serverc.exe
+-rw-rw-r-- 1 jzk  jzk  419430400 Jun  4 02:28 test1
+drwxrwxr-x 2 jzk  jzk       4096 Jun 14 18:58 testdir
+-rw-r--r-- 1 root root 419430400 Jun 14 19:00 testfile
+-rw-rw-r-- 1 jzk  jzk   73400320 Jun  4 02:29 test.txt

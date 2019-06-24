@@ -1,0 +1,83 @@
+connection with client set up at time :Wed Jun 12 05:15:13 2019
+
+at time Wed Jun 12 05:15:26 2019
+: cmd received = pwd
+
+at time Wed Jun 12 05:15:26 2019
+:cmd received finished successfully
+
+at time Wed Jun 12 05:15:29 2019
+: cmd received = exit
+
+at time Wed Jun 12 05:15:29 2019
+:client exit.
+connection with client set up at time :Fri Jun 14 18:54:21 2019
+
+at time Fri Jun 14 18:54:25 2019
+:login from user jzk.
+
+at time Fri Jun 14 18:54:26 2019
+: cmd received = ls
+
+at time Fri Jun 14 18:54:26 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:56:10 2019
+: cmd received = ls
+
+at time Fri Jun 14 18:56:10 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:56:49 2019
+: cmd received = cd testdir
+
+at time Fri Jun 14 18:56:49 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:56:56 2019
+: cmd received = pwd
+
+at time Fri Jun 14 18:56:56 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:57:33 2019
+: cmd received = gets netdisk.log
+
+at time Fri Jun 14 18:57:33 2019
+:command error.
+
+at time Fri Jun 14 18:57:33 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:57:59 2019
+: cmd received = cd /home/jzk/netdiskServer
+
+at time Fri Jun 14 18:57:59 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:58:06 2019
+: cmd received = gets netdisk.log
+
+at time Fri Jun 14 18:58:06 2019
+:command error.
+
+at time Fri Jun 14 18:58:06 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:58:11 2019
+: cmd received = ls
+
+at time Fri Jun 14 18:58:11 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:58:19 2019
+: cmd received = pwd
+
+at time Fri Jun 14 18:58:19 2019
+:cmd received finished successfully
+
+at time Fri Jun 14 18:58:27 2019
+: cmd received = exit
+
+at time Fri Jun 14 18:58:27 2019
+:client exit.
