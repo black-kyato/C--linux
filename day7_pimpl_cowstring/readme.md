@@ -1,0 +1,3 @@
+- pimpl目录实现PIMPL设计模式,一个`phone`类中通过`_phone`类实现具体功能
+- autodelete目录下实现单例模式的自动释放
+- cowstring目录下实现了简单cowstring,通过构造代理类来区分operator[]的读写操作
