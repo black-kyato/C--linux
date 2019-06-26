@@ -13,7 +13,7 @@ OC := $(patsubst %.cc, %.o, $(wildcard *.cc))
 
 all:$(EXE)
 %.out:%.cc
-	g++ -Wall -g testxml.cc tinyxml2.cpp -o testxml.out -llog4cpp -lpthread
+	g++ -Wall -g testxml.cc tinyxml2.cpp -o testxml.out
 
 .PHONY : clean rebuild debug
 clean:
