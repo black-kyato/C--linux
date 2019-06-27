@@ -3,6 +3,7 @@
 #define BLUE false
 using namespace std;
 
+
 class Weapon
 {
     enum weaponType
@@ -157,7 +158,9 @@ private:
     vector<Iceman> armyI;
     vector<Lion> armyL;
     vector<Wolf> armyW;
+    static int time;
 public:
+    static int dragonLife,ninjaLife,icemanLife,lionLife,wolfLife;
     Command(bool color,int lifeCount):_color(color),_lifeCount(lifeCount){
         count = 0;
         if(color)
@@ -169,108 +172,212 @@ public:
             this->color = "blue";
         }   
     }
-    bool proDragon(int life)
+    int getLife()
     {
-        if(life>_lifeCount)
+        return _lifeCount;
+    }
+    bool proDragon()
+    {
+        if(dragonLife>_lifeCount)
         {
             return false;
         }
         ++count;
-        _lifeCount -= life;
-        Dragon d(count,count/(float)life,life);
+        _lifeCount -= dragonLife;
+        Dragon d(count,_lifeCount/(float)dragonLife,dragonLife);
         armyD.push_back(d);
-        cout<<color<<" dragon "<<count<<" born with strength "<<life<<","<<armyD.size()<<" dragon in "<<color<<" headquarter."<<endl;
+        cout<<color<<" dragon "<<count<<" born with strength "<<dragonLife<<","<<armyD.size()<<" dragon in "<<color<<" headquarter."<<endl;
         cout<<"It has a "<<d.getWeapon().getWeapon()<<",and it's morale is "<<d.getMorale()<<endl;
         return true;
     }
-    bool proNinja(int life)
+    bool proNinja()
     {
-        if(life>_lifeCount)
+        if(ninjaLife>_lifeCount)
         {
             return false;
         }
         ++count;
-        _lifeCount -= life;
-        Ninja n(count,life);
+        _lifeCount -= ninjaLife;
+        Ninja n(count,ninjaLife);
         armyN.push_back(n);
-        cout<<color<<" ninja "<<count<<" born with strength "<<life<<","<<armyN.size()<<" ninja in "<<color<<" headquarter."<<endl;
+        cout<<color<<" ninja "<<count<<" born with strength "<<ninjaLife<<","<<armyN.size()<<" ninja in "<<color<<" headquarter."<<endl;
         cout<<"It has a "<<n.getWeapon1().getWeapon()<<" and a "<<n.getWeapon2().getWeapon()<<endl;
         return true;
     }
-    bool proIceman(int life)
+    bool proIceman()
     {
-        if(life>_lifeCount)
+        if(icemanLife>_lifeCount)
         {
             return false;
         }
         ++count;
-        _lifeCount -= life;
-        Iceman i(count,life);
+        _lifeCount -= icemanLife;
+        Iceman i(count,icemanLife);
         armyI.push_back(i);
-        cout<<color<<" iceman "<<count<<" born with strength "<<life<<","<<armyI.size()<<" iceman in "<<color<<" headquarter."<<endl;
+        cout<<color<<" iceman "<<count<<" born with strength "<<icemanLife<<","<<armyI.size()<<" iceman in "<<color<<" headquarter."<<endl;
         cout<<"It has a "<<i.getWeapon().getWeapon()<<endl;
         return true;
     }
-    bool proLion(int life)
+    bool proLion()
     {
-        if(life>_lifeCount)
+        if(lionLife>_lifeCount)
         {
             return false;
         }
         ++count;
-        _lifeCount -= life;
-        Lion l(count,_lifeCount,life);
+        _lifeCount -= lionLife;
+        Lion l(count,_lifeCount,lionLife);
         armyL.push_back(l);
-        cout<<color<<" lion "<<count<<" born with strength "<<life<<","<<armyL.size()<<" lion in "<<color<<" headquarter."<<endl;
+        cout<<color<<" lion "<<count<<" born with strength "<<lionLife<<","<<armyL.size()<<" lion in "<<color<<" headquarter."<<endl;
         cout<<"It's loyalty is "<<l.getLoyalty()<<endl;
         return true;
     }
-    bool proWolf(int life)
+    bool proWolf()
     {
-        if(life>_lifeCount)
+        if(wolfLife>_lifeCount)
         {
             return false;
         }
         ++count;
-        _lifeCount -= life;
-        Wolf w(count,life);
+        _lifeCount -= wolfLife;
+        Wolf w(count,wolfLife);
         armyW.push_back(w);
-        cout<<color<<" wolf "<<count<<" born with strength "<<life<<","<<armyW.size()<<" wolf in "<<color<<" headquarter."<<endl;
+        cout<<color<<" wolf "<<count<<" born with strength "<<wolfLife<<","<<armyW.size()<<" wolf in "<<color<<" headquarter."<<endl;
         return true;
     }
-    void produce(int dragonLife = 40,int ninjaLife = 15,int icemanLife = 35,int lionLife = 30,int wolfLife = 20)
+    bool getColor()
     {
-        bool b1,b2,b3,b4,b5;
-        b1=b2=b3=b4=b5=true;
+        return _color;
+    }
+    static void timeGo()
+    {
+        ++time;
+    }
+    static int getTime()
+    {
+        return time;
+    }
+    void produce(int flag)
+    {
+        bool conf = true;
+        cout<<setw(3)<<setfill('0')<<time<<" "<<setfill(' ');
         if(_color)
         {
-            while(b1 || b2 || b3 || b4 || b5)
+            switch(flag)
             {
-                b1 = proIceman(icemanLife);
-                b2 = proLion(lionLife);
-                b3 = proWolf(wolfLife);
-                b4 = proNinja(ninjaLife);
-                b5 = proDragon(dragonLife);
+start:      case 1:
+                conf = proIceman();
+                if(conf)
+                    break;
+            case 2:
+                conf = proLion();
+                    if(conf)
+                        break;
+            case 3:
+                conf = proWolf();
+                if(conf)
+                    break;
+            case 4:
+                conf = proNinja();
+                if(conf)
+                    break;
+            case 5:
+                conf = proDragon();
+                if(conf)
+                    break;
+            default:
+                if(!conf)
+                goto start;
+                break;
             }
         }
         else
         {
-            while(b1 || b2 || b3 || b4 || b5)
+            switch(flag)
             {
-                b1 = proLion(lionLife);
-                b2 = proDragon(dragonLife);
-                b3 = proNinja(ninjaLife);
-                b4 = proIceman(icemanLife);
-                b5 = proWolf(wolfLife);
+startB:      case 1:
+                conf = proLion();
+                if(conf)
+                    break;
+            case 2:
+                conf = proDragon(); 
+                    if(conf)
+                        break;
+            case 3:
+                conf = proNinja();
+                if(conf)
+                    break;
+            case 4:
+                conf = proIceman();
+                if(conf)
+                    break;
+            case 5:
+                conf = proWolf();
+                if(conf)
+                    break;
+            default:
+                if(!conf)
+                goto startB;
+                break;
             }
         }
     }
 };
+int Command::time = 0;
+int Command::dragonLife = 0;
+int Command::lionLife = 0;
+int Command::icemanLife = 0;
+int Command::wolfLife = 0;
+int Command::ninjaLife = 0;
 
+int Min(int a,int b)
+{
+    return a>b?b:a;
+}
 int main()
 {
-    Command red(RED,3000);
-    red.produce(50,15,40,35,20);
+    int life;
+    cout<<"请输入生命元(1-10000)"<<endl;
+    cin>>life;
+    cout<<"请输入dragon 、ninja、iceman、lion、wolf 的初始生命值(0-10000)"<<endl;
+    cin>>Command::dragonLife>>Command::ninjaLife>>Command::icemanLife>>Command::lionLife>>Command::wolfLife;
+    Command red(RED,life),blue(BLUE,life);
+    int min = Min(Min(Command::dragonLife,Command::ninjaLife),Min(Command::icemanLife,Min(Command::lionLife,Command::wolfLife)));
+    
+    bool stopR=false,stopB =false;
+    int i = 1;
+    while(!stopR||!stopB)
+    {
+        if( ++i == 6 )
+        {
+            i = 1;
+        }
+        if(red.getLife()>=min)
+        {
+            red.produce(i);
+        }
+        else
+        {
+            if(!stopR)
+            {
+                cout<<setw(3)<<setfill('0')<<Command::getTime()<<"red headquarter stops making warriors"<<endl;
+                stopR = true;
+            }
+        }
+        if(blue.getLife()>=min)
+        {
+            blue.produce(i);
+        }
+        else
+        {
+            if(!stopB)
+            {
+                cout<<setw(3)<<setfill('0')<<Command::getTime()<<"blue headquarter stops making warriors"<<endl;
+                stopB = true;
+            }
+        }
+        Command::timeGo();
+    }
     return 0;
 }
 
